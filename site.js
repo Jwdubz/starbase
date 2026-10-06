@@ -150,7 +150,7 @@
   btn.addEventListener('click', function(){
     paused = !paused;
     btn.setAttribute('aria-pressed', String(paused));
-    btn.setAttribute('aria-label', paused ? 'Play motion' : 'Pause motion');
+    btn.setAttribute('aria-label', paused ? 'Play Motion' : 'Pause Motion');
     txt.textContent = paused ? 'Play' : 'Pause';
     html.classList.toggle('is-paused', paused);
     if (paused){

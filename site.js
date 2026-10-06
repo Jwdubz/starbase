@@ -1,4 +1,4 @@
-/* Starbase Wraps concept — our own code. Motion is mandatory (prefers-reduced-motion intentionally not read).
+/* Starbase Wraps concept - our own code. Motion is mandatory (prefers-reduced-motion intentionally not read).
    One Pause/Play control (WCAG 2.2.2) stops every ambient loop and film. */
 (function(){
   'use strict';
@@ -10,7 +10,7 @@
   var ambient = [];             // looping tweens the Pause button owns
   var pending = new Set();      // reveal timelines not yet played
 
-  /* ---- smooth scroll (Lenis lerp 0.1 — measured on the SOTD) ---- */
+  /* ---- smooth scroll (Lenis lerp 0.1 - measured on the SOTD) ---- */
   var lenis = new Lenis({ lerp: 0.1, wheelMultiplier: 1, smoothWheel: true, syncTouch: false });
   lenis.on('scroll', ST.update);
   g.ticker.add(function(t){ lenis.raf(t * 1000); });
@@ -251,7 +251,7 @@
     var h = document.querySelector('.hero__h'); if (!h) return;
     h.style.fontSize = '';
     var cs = parseFloat(getComputedStyle(h).fontSize), ratio = 1;
-    // only lines 1–2 — line 3 is sized to the film edge by alignHero
+    // only lines 1–2 - line 3 is sized to the film edge by alignHero
     [].slice.call(h.querySelectorAll('.hl')).slice(0, 2).forEach(function(l){
       var w = l.scrollWidth, a = l.clientWidth;
       if (a > 0 && w > a * 0.97) ratio = Math.min(ratio, (a * 0.97) / w);

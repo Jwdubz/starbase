@@ -25,7 +25,7 @@ em.em--purple.em--period{margin-left:0;letter-spacing:0;padding-right:.02em}
 .eyebrow::before{content:"";width:.55rem;height:.55rem;background:var(--cy);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
 .cap{position:absolute;left:1.1rem;bottom:1.1rem;z-index:2;font-size:.85rem;font-weight:600;background:rgba(7,9,15,.82);color:var(--paper);padding:.35rem .6rem;border-radius:99px;letter-spacing:.01em}
 
-/* split masks — overflow:hidden is required for the wipe; padding keeps glyph ink (S) inside the clip box */
+/* split masks - overflow:hidden is required for the wipe; padding keeps glyph ink (S) inside the clip box */
 .split-mask{overflow:hidden;padding-block:.06em .1em;padding-inline:.12em;mask-image:none;-webkit-mask-image:none}
 .hero__h .split-mask{overflow:hidden;padding-block:.05em;padding-inline:.18em}
 .hero__h .split-line{display:block;will-change:transform}
@@ -87,7 +87,7 @@ main,.hdr,.ftr{position:relative;z-index:1}
 /* hero */
 .hero{min-height:100svh;padding:calc(var(--pad) + 5.5rem) var(--pad) var(--pad);display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gap);align-content:start;container-type:inline-size}
 .hero__eyebrow{grid-column:1/-1;margin-bottom:1.6rem;text-align:center;justify-content:center}
-/* hero type — 5 centered lines */
+/* hero type - 5 centered lines */
 .hero__h{overflow:visible;font-family:var(--serif);font-style:italic;grid-column:1/-1;margin:0 auto;font-weight:400;text-transform:uppercase;font-size:min(5.4vw,7cqi,5.8rem);line-height:1;letter-spacing:.14em;box-sizing:border-box;overflow-wrap:normal;text-align:center;width:100%;color:var(--paper);display:flex;flex-direction:column;align-items:center;gap:.08em}
 .hero__h .hl{display:block;width:100%;box-sizing:border-box;text-align:center;margin:0;overflow:visible;font-family:var(--serif);font-style:italic;font-weight:400;font-size:1em;letter-spacing:.14em;line-height:1;color:var(--paper)}
 .hero__h em{font-family:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;color:inherit;text-transform:uppercase}

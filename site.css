@@ -235,7 +235,7 @@ main,.hdr,.ftr{position:relative;z-index:1}
   
   .hero__h .hl:first-child{font-size:1em}
   .hero__h .hl:nth-child(2){padding-left:0;font-size:1.05em}
-  .hero__h .hl:nth-child(3){text-align:left;padding-left:0;padding-right:.2em;font-size:1.05em;letter-spacing:-.03em}
+  .hero__h .hl:nth-child(3){text-align:center;padding-left:0;padding-right:0;font-size:1.05em;letter-spacing:-.03em;width:100%}
   .hero__media{aspect-ratio:4/5}
   .hero__foot{grid-template-columns:1fr;row-gap:1.1rem}
   .hero__sub,.hero__cta{grid-column:1/-1}

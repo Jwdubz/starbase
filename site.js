@@ -244,6 +244,8 @@
     }
     var radius = parseFloat(getComputedStyle(media).borderTopRightRadius) || 16;
     var target = media.getBoundingClientRect().right - (radius + 12);
+    /* phone: WORLD. fills the headline's content width (desktop keeps the film-edge alignment) */
+    if (window.matchMedia && matchMedia('(max-width: 600px)').matches) target = h.getBoundingClientRect().right - 2;
     var left = payoff.getBoundingClientRect().left;
     if (target - left < 40) return;
     var lo = 12, hi = Math.min((target - left) * 1.2, innerWidth * 0.45);

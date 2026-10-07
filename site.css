@@ -306,3 +306,9 @@ main,.hdr,.ftr{position:relative;z-index:1}
 
 /* pre-send: no one-word last lines in body copy */
 p,li,blockquote,figcaption{text-wrap:pretty}
+
+/* pre-send: phone hero, "WORLD." is the biggest word and fills the content width (desktop unchanged) */
+@media (max-width:600px){
+  .hero__h .hl.hl--payoff{font-size:calc((100vw - 2.5rem) / 4.4 / 1.18);max-width:100%}
+  .hero__h .hl.hl--payoff .split-mask{padding-inline:.06em}
+}

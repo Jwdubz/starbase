@@ -303,3 +303,6 @@ main,.hdr,.ftr{position:relative;z-index:1}
   .pill{font-size:.9rem}
   .motion{font-size:.875rem}
 }
+
+/* pre-send: no one-word last lines in body copy */
+p,li,blockquote,figcaption{text-wrap:pretty}

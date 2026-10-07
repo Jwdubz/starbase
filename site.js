@@ -62,7 +62,22 @@
   var loader = document.querySelector('.loader');
   var num = loader.querySelector('.loader__num');
   var meter = { v: 0 };
-  var intro = g.timeline({ delay: 0.15 });
+  var phone = matchMedia('(max-width: 820px)').matches;
+  var intro;
+  if (phone){
+    /* phone: no loader, CTA usable immediately (<1s) */
+    loader.style.display = 'none';
+    lenis.start(); playFilms();
+    intro = g.timeline({ delay: 0 });
+    intro.fromTo('.hdr', { y: -12, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.45, ease: 'power3.out' }, 0)
+         .add(function(){ heroLines.forEach(function(el){ el._done = true; }); }, 0)
+         .to(heroLines.map(function(el){ return el._lines; }).flat(), { yPercent: 0, duration: 0.6, ease: 'power3.out', stagger: 0.07 }, 0)
+         .add(function(){ hero.querySelectorAll('[data-reveal]').forEach(reveal); }, 0.15)
+         .fromTo('.hero__media', { clipPath: 'inset(10% 8% 10% 8% round 1rem)' }, { clipPath: 'inset(0% 0% 0% 0% round 1rem)', duration: 1.1, ease: 'expo.out' }, 0.2)
+         .fromTo('#film-hero', { scale: 1.12 }, { scale: 1.04, duration: 1.4, ease: 'expo.out' }, 0.2)
+         .add(function(){ alignHero(); setTimeout(alignHero, 50); setTimeout(alignHero, 400); }, 0.5);
+  } else {
+  intro = g.timeline({ delay: 0.15 });
   intro.to(meter, { v: 98, duration: 1.5, ease: 'power2.out', onUpdate: function(){ num.textContent = Math.round(meter.v); } }, 0)
        .to('.loader__bar i', { scaleX: 1, duration: 1.5, ease: 'power2.out' }, 0)
        .to(loader, { clipPath: 'inset(0 0 100% 0)', duration: 1.0, ease: 'expo.inOut' }, 1.65)
@@ -76,6 +91,7 @@
        .add(function(){ alignHero(); }, 7.5)
        .add(function(){ alignHero(); setTimeout(alignHero, 50); setTimeout(alignHero, 400); }, 6.5)
        .set(loader, { display: 'none' });
+  }
   window.__intro = intro;
 
   /* ---- scroll reveals: fire before entry (lesson from Larson walk) ---- */

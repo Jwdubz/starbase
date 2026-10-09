@@ -178,7 +178,7 @@
       ambient.forEach(function(t){ t.resume(); });
       playFilms();
     }
-    /* Pause freezes all motion: GSAP + smooth scroll */ if(window.gsap){gsap.globalTimeline[paused?'pause':'resume']();}if(typeof lenis!=='undefined'&&lenis){paused?lenis.stop():lenis.start();}
+    /* Pause freezes all motion: GSAP + smooth scroll */ if(window.gsap){gsap.globalTimeline[paused?'pause':'resume']();}if(typeof lenis!=='undefined'&&lenis){lenis.options.smoothWheel=!paused;}
   });
 
   /* ---- header state: solid after the hero top, light over paper sections ---- */

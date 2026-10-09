@@ -134,7 +134,7 @@ main,.hdr,.ftr{position:relative;z-index:1}
 .mani .eyebrow{justify-content:center}
 .mani__h{font-family:var(--serif);font-style:italic;margin:0;max-width:min(28rem,92vw);font-weight:400;text-transform:none;font-size:clamp(1.55rem,3vw,2.6rem);line-height:1.28;letter-spacing:-.01em}
 .mani__h em{font-size:1em}
-.mani__h .em--red{color:var(--red);text-transform:uppercase}
+.mani__h .em--red{color:var(--red);text-transform:uppercase;letter-spacing:.01em;font-kerning:none}
 .mani__h .em--orange{color:#ff6a00;text-transform:uppercase}
 
 /* tint */

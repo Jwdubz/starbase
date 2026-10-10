@@ -33,9 +33,15 @@
     v.addEventListener('error', fail);
     var src = v.querySelector('source');
     if (src) src.addEventListener('error', fail);
-    var p = v.play(); if (p && p.catch) p.catch(function(){});
   });
-  function playFilms(){ films.forEach(function(v){ if(!v.classList.contains('nofilm')){ var p=v.play(); if(p&&p.catch)p.catch(function(){}); } }); }
+  /* only decode films that are on screen: phones cap hardware decoders, and off-screen films left mid-page tiles black */
+  var filmsOn = false, seen = new Set();
+  function tryPlay(v){ if (filmsOn && !paused && seen.has(v) && !v.classList.contains('nofilm')){ var p=v.play(); if(p&&p.catch)p.catch(function(){}); } }
+  if ('IntersectionObserver' in window){
+    var fio = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ seen.add(e.target); tryPlay(e.target); } else { seen.delete(e.target); e.target.pause(); } }); }, { rootMargin: '200px 0px' });
+    films.forEach(function(v){ fio.observe(v); });
+  } else { films.forEach(function(v){ seen.add(v); }); }
+  function playFilms(){ filmsOn = true; films.forEach(tryPlay); }
   function pauseFilms(){ films.forEach(function(v){ v.pause(); }); }
 
   /* ---- splits ---- */

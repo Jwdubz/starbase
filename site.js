@@ -134,8 +134,9 @@
 
   /* ---- counters ---- */
   document.querySelectorAll('[data-count]').forEach(function(n){
-    var o = { v: 0 }, to = +n.dataset.count;
+    var to = +n.dataset.count, o = { v: Math.round(to * 0.6) };
     ST.create({ trigger: n, start: 'top 95%', once: true, onEnter: function(){
+      n.textContent = o.v;
       g.to(o, { v: to, duration: 1.4, ease: 'power2.out', onUpdate: function(){ n.textContent = Math.round(o.v); } });
     }});
   });

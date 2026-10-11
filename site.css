@@ -126,7 +126,7 @@ main,.hdr,.ftr{position:relative;z-index:1}
 /* ticker */
 .ticker{overflow:hidden;border-block:1px solid rgba(238,242,245,.14);padding:1.1rem 0;margin-top:clamp(2rem,5vw,4rem);position:relative;z-index:1}
 .ticker__track{display:flex;align-items:center;gap:2rem;width:max-content;white-space:nowrap}
-.ticker span{font-weight:800;font-variation-settings:"wdth" 125;text-transform:uppercase;font-size:clamp(1.3rem,2.6vw,2.4rem);letter-spacing:-.03em}
+.ticker span{font-weight:800;font-variation-settings:"wdth" 125;text-transform:uppercase;font-size:clamp(1.3rem,2.6vw,2.4rem);letter-spacing:-.03em;word-spacing:.22em}
 .ticker i{width:.8rem;height:.9rem;background:var(--cy);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
 
 /* manifesto */
